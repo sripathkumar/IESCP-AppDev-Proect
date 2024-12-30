@@ -1,0 +1,30 @@
+cd/frontend:
+npm install
+npm run serve
+
+projectfolder/
+python3 -m venv .venv
+source .venv/bin/activate   
+
+
+
+Redis Setup:
+redis-server
+
+celery setup:
+celery -A app.celery_app worker --loglevel=info (or) python3 -m celery -A app.celery_app worker --loglevel=info
+celery -A app.celery_app beat --loglevel=info (or) python3 -m celery -A app.celery_app beat --loglevel=info
+
+Mailhog setup:
+brew install mailhog -> mailhog ->http://localhost:8025
+
+
+
+
+additional:
+
+Kill the Process Using Port 5000 adn mailhog
+* Open the terminal and find the process ID (PID) using port 5000:bash Copy code
+
+lsof -i :5000
+kill -9 12345
